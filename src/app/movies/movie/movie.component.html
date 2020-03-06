@@ -1,6 +1,6 @@
 <mat-card class="mov-card">
         <mat-card-header>
-            <img mat-card-avatar [src]="mov.img ? mov.img : {{mov.picture}}">
+            <!-- <img mat-card-avatar [src]="mov.img ? mov.img : {{mov.picture}}"> -->
             <mat-card-title>{{mov.name | uppercase}}</mat-card-title>
             <mat-card-subtitle [ngClass]="{'high': mov.price > 500}">{{mov.price}}€/j</mat-card-subtitle>
         </mat-card-header>

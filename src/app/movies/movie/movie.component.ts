@@ -7,9 +7,9 @@ import { MoviesService } from '../movies.service';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class DeveloppeurComponent implements OnInit {
+export class MovieComponent implements OnInit {
 
-  @Input() dev: Movie;
+  @Input() mov: Movie;
   editMode: boolean = false;
   previousDescription: string;
 
@@ -22,13 +22,13 @@ export class DeveloppeurComponent implements OnInit {
   }
 
   edit() {
-    this.previousDescription = this.dev.description;
+    this.previousDescription = this.mov.description;
     this.editMode = true;
   }
 
   validate(): void {
     this.editMode = false;
-    this.service.update(this.dev).subscribe((d => Object.assign(this.mov, d)));
+    this.service.update(this.mov).subscribe((d => Object.assign(this.mov, d)));
   }
 
   cancel() {

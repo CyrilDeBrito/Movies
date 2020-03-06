@@ -3,7 +3,7 @@ import * as moment from 'moment';
 import {DatePipe} from '@angular/common';
 
 @Pipe({name: 'creationDate'})
-export class DeveloppeurCreationDatePipe implements PipeTransform {
+export class MovieCreationDatePipe implements PipeTransform {
 
   transform(value: Date): any {
 
