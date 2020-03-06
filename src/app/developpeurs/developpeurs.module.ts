@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeveloppeursListComponent } from './developpeurs-list/developpeurs-list.component';
-import { DeveloppeurComponent } from './developpeur/developpeur.component';
+import { DeveloppeurComponent } from './developpeur/movie.component';
 import { MatSidenavModule, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { DeveloppeurDetailComponent } from './developpeur-detail/developpeur-detail.component';
@@ -23,8 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    DevRoutingModule
+    MovRoutingModule
   ],
-  exports: [DeveloppeursListComponent]
+  exports: [MoviesListComponent]
 })
 export class DeveloppeursModule { }
