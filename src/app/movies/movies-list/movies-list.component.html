@@ -2,9 +2,17 @@
 
 
   <mat-sidenav-content>
+
     <button mat-icon-button (click)="back()">
       <mat-icon>home</mat-icon>
     </button>
+
+    <input type="search" id="movies-search" arial-label="search a movie">
+    <button>
+      <mat-icon>search</mat-icon>
+    </button>
+
+
     <div class="container">
       <ng-container *ngFor="let movie of movies">
         <app-movie [mov]="movie"></app-movie>
