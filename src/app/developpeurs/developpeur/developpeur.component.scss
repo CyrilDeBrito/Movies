@@ -1,0 +1,23 @@
+.dev-card {
+    margin: 20px;
+    width: 200px;
+    height: 300px;
+    display:flex;
+    flex-direction: column;
+    .mat-card-header {
+      flex-shrink: 0;
+    }
+
+    .mat-card-content{
+      flex-grow: 1;
+      overflow: auto;
+      .date-creation {
+        color: lightgray;
+        font-style: italic;
+      }
+    }
+
+    .high {
+      color: red;
+    }
+  }

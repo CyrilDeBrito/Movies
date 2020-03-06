@@ -1,0 +1,27 @@
+mat-sidenav {
+  padding: 20px;
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+mat-sidenav-container {
+  height: calc(100% - 64px);
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    > * {
+      margin: 5px;
+    }
+  }
+
+  .add-btn {
+    align-self: center;
+    margin-left: 25px;
+    color: white;
+  }
+
+}

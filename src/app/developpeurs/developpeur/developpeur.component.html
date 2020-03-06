@@ -1,0 +1,29 @@
+<mat-card class="dev-card">
+        <mat-card-header>
+            <img mat-card-avatar [src]="dev.img ? dev.img : '/assets/dev2.jpg'">
+            <mat-card-title>{{dev.name | uppercase}}</mat-card-title>
+            <mat-card-subtitle [ngClass]="{'high': dev.price > 500}">{{dev.price}}€/j</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <span class="date-creation">Fiche créée {{dev.creation | creationDate}}</span>
+            <div *ngIf="!editMode">
+                <span>{{dev.description}}</span>
+                <button mat-icon-button (click)="edit()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div *ngIf="editMode">
+                <mat-form-field>
+                    <textarea matInput [(ngModel)]="dev.description" placeholder="Description"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" (click)="validate()" [disabled]="!dev.description">Valider</button>
+                <button mat-button color="warn" (click)="cancel()">Annuler</button>
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button [routerLink]="['/developpers', dev.id]">DETAILS</button>
+            <button mat-button color="warn" (click)="delete()">SUPPRIMER</button>
+        </mat-card-actions>
+    </mat-card>
