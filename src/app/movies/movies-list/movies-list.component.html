@@ -1,29 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [opened]="addMode">
-    <h2>New movie</h2>
-    <form class='form' #maFormRef="ngForm">
-      <mat-form-field>
-        <input name="name" matInput [(ngModel)]="newMov.name" placeholder="Nom" autocomplete="off" required minlength="3" maxlength="10" #username="ngModel">
-        <mat-error *ngIf="username.dirty && username.hasError('required')">
-          La saisie d'un nom est <strong>obligatoire</strong>
-        </mat-error>
-        <mat-error *ngIf="username.dirty && (username.hasError('minlength') || username.hasError('maxlength'))">
-          Saisir un nom compris entre 3 et 10 caractères
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input name="price" matInput type="number" [(ngModel)]="newMov.price" placeholder="Prix" autocomplete="off" required>
-        <mat-error>
-          La saisie d'un prix est <strong>obligatoire</strong>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea name="description" matInput [(ngModel)]="newMov.description" placeholder="Description" autocomplete="off"></textarea>
-      </mat-form-field>
-      <button mat-raised-button color='primary' (click)="add()" [disabled]="maFormRef.invalid">Ajouter</button>
-      <button mat-button (click)="cancel()">Annuler</button>
-    </form>
-  </mat-sidenav>
+
 
   <mat-sidenav-content>
     <button mat-icon-button (click)="back()">
@@ -33,9 +9,6 @@
       <ng-container *ngFor="let movie of movies">
         <app-movie [mov]="movie"></app-movie>
       </ng-container>
-      <button mat-fab class="add-btn" *ngIf="!addMode" (click)="switchToAddMode()">
-        <mat-icon>add</mat-icon>
-      </button>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -31,7 +31,7 @@ export class MoviesListComponent implements OnInit  {
   }
 
   add() {
-    this.service.add(this.newMov).subscribe(mov => this.Movies.push(mov));
+    this.service.add(this.newMov).subscribe(mov => this.movies.push(mov));
     this.addMode = false;
   }
 
